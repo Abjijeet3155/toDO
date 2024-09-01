@@ -7,7 +7,7 @@ app.get('/',(req,res)=>{
 res.send("Hello World!!!!!")
 });
 
-app.connect(port, () => {
+app.listen(port, () => {
     console.log(`Connected to server  http://localhost:${port}`);
 });
     

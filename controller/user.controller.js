@@ -21,12 +21,12 @@ exports.login= async(req,res,next)=>{
     const user = await  userService.checkuser(email);
     console.log("-----user-----",user);
     if (!user) {
-       throw new Error("user");
+      res.json({status:false,message:"Invalid Email"});
     }
 
     const isMatch= await user.comparePassword(password);
     if (isMatch===false) {
-      throw new Error("Password Invalid");
+      res.json({status:false,success:"Invalid Password"});
       
     }
 
@@ -38,3 +38,4 @@ exports.login= async(req,res,next)=>{
     next(error);
   }
 }
+

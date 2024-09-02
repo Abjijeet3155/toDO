@@ -25,7 +25,7 @@ exports.login= async(req,res,next)=>{
     }
 
     const isMatch= await user.comparePassword(password);
-    if (isMatch===false) {
+    if (!isMatch) {
       res.json({status:false,message:"Invalid Password"});
       
     }

@@ -31,3 +31,40 @@ exports.deleteToDO = async(req,res,next)=>{
         next (error);
     }
 }
+exports.sendBulkMessage = async(req,res,next)=>{
+    try{
+        const {phoneNumbers,message}=req.body;
+        if (!Array.isArray(phoneNumbers)) {
+            throw new Error("phoneNumbers must be a defined array");
+            
+        }
+        console.log("Received phone numbers:", phoneNumbers); // Debug log
+        console.log("Received message:", message); 
+           await ToDoServices.bulkMessageByWhatsapp(phoneNumbers,message);
+        
+        res.json({status:true,msg:"Whatsapp message sent successfully"});
+    }catch(error){
+        console.log(`Error found${error.message}`)
+        next (error);
+    }
+}
+exports.sendBulkMessagecloud = async(req,res,next)=>{
+    try{
+        const {Numbers,msg}=req.body;
+        console.log("Request body:", req.body);  // Add this line
+        console.log("Numbers:", Numbers);        // Add this line
+        console.log("Message:", msg); 
+        if (!Array.isArray(Numbers)) {
+            throw new Error("phoneNumbers must be a defined array");
+            
+        }
+        console.log("Received phone numbers:", Numbers); // Debug log
+        console.log("Received message:", msg); 
+           await ToDoServices.bulkMessageByWhatsappcloud(Numbers,msg);
+        
+        res.json({status:true,msg:"WhatsApp message sent successfully"});
+    }catch(error){
+        console.log(`Error found${error. msg}`)
+        next (error);
+    }
+}

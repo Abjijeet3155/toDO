@@ -68,3 +68,23 @@ exports.sendBulkMessagecloud = async(req,res,next)=>{
         next (error);
     }
 }
+
+exports.sendBulkMessagewhatsappjs = async(req,res,next)=>{
+    try{
+        const {phone,message}=req.body;
+     
+        console.log("Phone:", phone);        // Add this line
+        console.log("Message:", message); 
+        if (!phone) {
+            throw new Error("Phone is required");
+            
+        }
+        
+           await ToDoServices.bulkMessageByWhatsappjs(phone,message);
+        
+        res.json({status:true,msg:"WhatsApp message sent successfully"});
+    }catch(error){
+        console.log(`Error found:${error.message}`)
+        next (error);
+    }
+}

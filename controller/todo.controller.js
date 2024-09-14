@@ -33,8 +33,8 @@ exports.deleteToDO = async(req,res,next)=>{
 }
 exports.editToDo=async(req,res,next)=>{
     try {
-        const {title,desc}=req.body
-        let  updated=await ToDoServices.editToDo(title,desc);
+        const {userId,title,desc}=req.body
+        let  updated=await ToDoServices.editToDo(userId,title,desc);
         res.json({status:true,success:updated})
         
     } catch (error) {

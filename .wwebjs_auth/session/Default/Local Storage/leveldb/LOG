@@ -1,3 +1,6 @@
-2024/09/07-04:34:25.241 4648 Reusing MANIFEST C:\Users\Abjijeet Kumar\Documents\toDO\.wwebjs_auth\session\Default\Local Storage\leveldb/MANIFEST-000001
-2024/09/07-04:34:25.242 4648 Recovering log #3
-2024/09/07-04:34:25.242 4648 Reusing old log C:\Users\Abjijeet Kumar\Documents\toDO\.wwebjs_auth\session\Default\Local Storage\leveldb/000003.log 
+2024/09/07-22:12:35.072 45a4 Reusing MANIFEST C:\Users\Abjijeet Kumar\Documents\toDO\.wwebjs_auth\session\Default\Local Storage\leveldb/MANIFEST-000001
+2024/09/07-22:12:35.083 45a4 Recovering log #4
+2024/09/07-22:12:35.083 45a4 Reusing old log C:\Users\Abjijeet Kumar\Documents\toDO\.wwebjs_auth\session\Default\Local Storage\leveldb/000004.log 
+2024/09/07-23:02:47.814 46ac Level-0 table #8: started
+2024/09/07-23:02:47.820 46ac Level-0 table #8: 14791 bytes OK
+2024/09/07-23:02:47.828 46ac Delete type=0 #4

@@ -31,3 +31,14 @@ exports.deleteToDO = async(req,res,next)=>{
         next (error);
     }
 }
+exports.editToDo=async(req,res,next)=>{
+    try {
+        const {title,desc}=req.body
+        let  updated=await ToDoServices.editToDo(title,desc);
+        res.json({status:true,success:updated})
+        
+    } catch (error) {
+        next (error);
+    }
+
+}

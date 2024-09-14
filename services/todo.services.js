@@ -23,6 +23,10 @@ const index=require("../index");
             const deleted= await TodoModel.findOneAndDelete({_id:id})
             return deleted;
         }
+        static async editToDo( title,desc){
+            const editToDo= await TodoModel.findOneAndUpdate({title,desc})
+            return editToDo;
+        }
        
     }
 

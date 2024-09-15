@@ -12,6 +12,7 @@ const index=require("../index");
             const savedTodo= await createTodo.save();
             
             const user = await UserModel.findById(userId);
+            return savedTodo
           
         
         }
@@ -24,7 +25,10 @@ const index=require("../index");
             return deleted;
         }
         static async editToDo(id,title,desc){
-            const editToDo= await TodoModel.findOneAndUpdate({_id:id,title,desc})
+            const editToDo= await TodoModel.findOneAndUpdate( 
+                { _id: id },
+                { title: title, desc: desc }, 
+                { new: true } ,)
             return editToDo;
         }
        
